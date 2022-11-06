@@ -1,0 +1,54 @@
+﻿<Window x:Class="gogo_JAM_MIN.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gogo_JAM_MIN"
+        mc:Ignorable="d"
+        Title="출퇴근 기름값 정보" Height="500" Width="350" FontSize="18">
+
+    <Grid Height="500" Width="350" Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/Resources/now_oil.PNG" Margin="4,110,19,165" Grid.Column="1"/>
+        <Label Content="가솔린:" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Left" Height="37" Margin="19,161,0,0" VerticalAlignment="Top" Width="129" FontSize="16" Grid.Column="1" />
+        <TextBlock x:Name="GaSolin" Margin="64,165,31,306" Width="80" Height="27" Foreground="#FFB1E5C1" Grid.Column="1" />
+
+        <Label Content="디젤:" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Left" Height="37" Margin="19,203,0,0" VerticalAlignment="Top" Width="129" FontSize="16" Grid.Column="1" />
+        <TextBlock x:Name="Diesel" Margin="62,208,33,265" Width="80" Height="27" Foreground="#FFB1E5C1" Grid.Column="1" />
+
+        <Label Content="LPG:" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Left" Height="37" Margin="19,245,0,0" VerticalAlignment="Top" Width="129" FontSize="16" Grid.Column="1" />
+        <TextBlock x:Name="LPG" Margin="63,250,32,222" Width="80" Height="27" Foreground="#FFB1E5C1" Grid.Column="1" />
+
+
+        <Image Source="/Resources/About_my_car.PNG" Margin="7,109,18,166" Grid.Column="0" />
+            <Label Content="차명:" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Left" Height="37" Margin="19,161,0,0" VerticalAlignment="Top" Width="129" FontSize="16" Grid.Column="0" />
+            <TextBlock x:Name="Car_Name" Margin="64,165,31,306" Width="80" Height="27" Foreground="#FFB1E5C1" Grid.Column="0" />
+
+            <Label Content="연비:" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Left" Height="37" Margin="19,203,0,0" VerticalAlignment="Top" Width="129" FontSize="16" Grid.Column="0" />
+            <TextBlock x:Name="mileage" Margin="62,208,33,265" Width="80" Height="27" Foreground="#FFB1E5C1" Grid.Column="0" />
+
+            <Label Content="거리:" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Left" Height="38" Margin="19,245,0,0" VerticalAlignment="Top" Width="129" FontSize="16" Grid.Column="0" />
+            <TextBlock x:Name="Destination" Margin="63,250,32,222" Width="80" Height="27" Foreground="#FFB1E5C1" Grid.Column="0" />
+
+            <Label Content="유종:" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Left" Height="38" Margin="19,286,0,0" VerticalAlignment="Top" Width="129" FontSize="16" Grid.Column="0" />
+            <TextBlock x:Name="oil" Margin="63,292,32,181" Width="80" Height="27" Foreground="#FFB1E5C1" Grid.Column="0" />
+
+        <Button Content="나의 출퇴근 정보 입력하기"  BorderThickness="0" Margin="84,360,84,100" Background="Azure" FontSize="14" FontFamily="Arial Black" Click="Button_Click" Grid.ColumnSpan="2">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+        <TextBlock x:Name="SUM" HorizontalAlignment="Left" Height="26" Margin="9,441,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="104" Foreground="{x:Null}" Grid.Column="1"/>
+
+        <TextBox HorizontalAlignment="Left" Height="26" Margin="56,431,0,0" TextWrapping="Wrap" Text="총 유류비                     원" VerticalAlignment="Top" Width="238" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black" Grid.ColumnSpan="2"/>
+
+
+    </Grid>
+</Window>

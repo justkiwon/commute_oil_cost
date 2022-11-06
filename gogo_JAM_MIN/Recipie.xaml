@@ -1,0 +1,30 @@
+﻿<Window x:Class="gogo_JAM_MIN.Recipie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gogo_JAM_MIN"
+        mc:Ignorable="d"
+        Title="Recipie" Height="330" Width="274" Margin="0,0,0,0">
+    <StackPanel Margin="0,0,-14,-29">
+
+        <Label Content="  차명" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Center" Margin="13,10,0,0" VerticalAlignment="Top" Width="180" Height="35"/>
+        <TextBox x:Name="Car_Name" HorizontalAlignment="Center" Height="23" Margin="50,-35,0,0"  Width="88" Text="Car Name"/>
+
+        <Label Content="  거리                         KM"  BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Center" Margin="13,10,0,0" VerticalAlignment="Top" Width="180" Height="35"/>
+        <TextBox x:Name="Destination" HorizontalAlignment="Center" Height="23" Margin="5,-35,0,0"  Width="88" Text="Destination"/>
+
+        <Label Content="  연비                         KM/L" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Center" Margin="13,10,0,0" VerticalAlignment="Top" Width="180" Height="35"/>
+        <TextBox x:Name="mileage" HorizontalAlignment="Center" Height="23" Margin="5,-35,0,0"  Width="88" Text="How to long" />
+
+        <Label Content="  유종"  BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Center" Margin="13,10,0,0" VerticalAlignment="Top" Width="180" Height="35"/>
+
+        <ComboBox x:Name="oil" HorizontalAlignment="Center" Height="23" Margin="50,-35,0,0"  Width="88" >
+            <ComboBoxItem Content="경유"/>
+            <ComboBoxItem Content="휘발유"/>
+            <ComboBoxItem Content="LPG"/>
+        </ComboBox>
+
+        <Button Background="#FF8DB6C1" Margin="-13.5,20,0,0" Content="내 차 입력 완료" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Height="80" Width= "250"/>
+    </StackPanel>
+</Window>
