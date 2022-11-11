@@ -56,16 +56,16 @@ namespace gogo_JAM_MIN
         }
         public bool Data_Parsing(string[,] a)
         {
-            foreach(string s in a)
+            for(int i = 0; i < 4; i++)
             {
-                if (s == null) { continue; }
-                string b;
-           //     Console.WriteLine(s);
-          //      b = s.IndexOf();
-             /*   if (b == "자동차")
+                for(int j=0; j < 4; j++)  // 0-> 유종, 1-> 가격 2-> 전일가비교 3->전체
                 {
-                    GaSolin.Text = b;
-                }*/
+                    if (a[i,j] == "휘발유") { GaSolin.Text = a[i, j+1]; }
+                    if (a[i,j] == "자동차용경유"){ Diesel.Text = a[i, j+1]; }
+                    if (a[i, j] == "자동차용부탄") { LPG.Text = a[i, j+1]; }
+
+                    Console.WriteLine(a[i,j]);
+                }
             }
             
          //   Console.WriteLine("\n"+a[1]);
