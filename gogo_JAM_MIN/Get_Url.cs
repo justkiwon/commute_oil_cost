@@ -71,7 +71,10 @@ namespace gogo_JAM_MIN
                         }
                     }
                 }
-                else { MessageBox.Show("error"); }
+                else { MessageBox.Show("error"); 
+                        Data[0,0] = "ERROR";
+                    return Data;
+                }
                 m = 0;
                 Console.WriteLine(Data[m, n]);
 

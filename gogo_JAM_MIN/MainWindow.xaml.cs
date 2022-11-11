@@ -56,20 +56,26 @@ namespace gogo_JAM_MIN
         }
         public bool Data_Parsing(string[,] a)
         {
-            for(int i = 0; i < 4; i++)
+            if (a[0, 0] != "ERROR")
             {
-                for(int j=0; j < 4; j++)  // 0-> 유종, 1-> 가격 2-> 전일가비교 3->전체
+                for (int i = 0; i < 4; i++)
                 {
-                    if (a[i,j] == "휘발유") { GaSolin.Text = a[i, j+1]; }
-                    if (a[i,j] == "자동차용경유"){ Diesel.Text = a[i, j+1]; }
-                    if (a[i, j] == "자동차용부탄") { LPG.Text = a[i, j+1]; }
+                    for (int j = 0; j < 4; j++)  // 0-> 유종, 1-> 가격 2-> 전일가비교 3->전체
+                    {
+                        if (a[i, j] == "휘발유") { GaSolin.Text = a[i, j + 1]; }
+                        if (a[i, j] == "자동차용경유") { Diesel.Text = a[i, j + 1]; }
+                        if (a[i, j] == "자동차용부탄") { LPG.Text = a[i, j + 1]; }
 
-                    Console.WriteLine(a[i,j]);
+                        Console.WriteLine(a[i, j]);
+                    }
                 }
+                //   Console.WriteLine("\n"+a[1]);
             }
-            
-         //   Console.WriteLine("\n"+a[1]);
-            return true;
+            else
+            {
+                MessageBox.Show("Please check Network!!!");
+            }
+                return true;
         }
     }
 }
