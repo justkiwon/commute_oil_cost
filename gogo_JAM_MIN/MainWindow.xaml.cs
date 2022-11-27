@@ -1,20 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Net;
-using System.Xml;
 //using Url_Key; // 내가 만든 dll name space
 
 namespace gogo_JAM_MIN
@@ -32,21 +17,50 @@ namespace gogo_JAM_MIN
             InitializeComponent();
             string[,] a = get_Url.Request("http://www.opinet.co.kr/api/avgAllPrice.do?out=xml&code=F220919345");
             Data_Parsing( a );
-            
         }
+        public string Selected_Destination { get; set; }
+        public string Selected_mileage { get; set; } //그냥 get { return Selected_mileage; } set { Selected_mileage = value; }과 동일 함
+        public string Selected_oil { get; set; }
+        public string Final_SUM { get; set; }
 
         private void Button_Click(object sender, RoutedEventArgs e)  // My go-arrived info
         {
-            
             Recipie recipie = new Recipie();
             if(recipie.ShowDialog() == true)
             {
                 Car_Name.Text = recipie.Car_Name.Text;
-                Destination.Text = recipie.Destination.Text;
                 mileage.Text = recipie.mileage.Text;
+                Selected_mileage = mileage.Text;
+                Destination.Text = recipie.Destination.Text;
+                Selected_Destination = Destination.Text;
                 oil.Text = recipie.oil.Text;
+                switch (oil.Text)
+                {
+                    case "경유":
+                        Selected_oil = Diesel.Text;
+                        break;
+                    case "휘발유":
+                        Selected_oil = GaSolin.Text;
+                        break;
+                    case "LPG":
+                        Selected_oil = LPG.Text;
+                        break;
+                }
             }
+            Calculate();
         }
+
+        public void Calculate()
+        {
+            Double sum;
+            Double oil = Convert.ToDouble(Selected_oil);
+            Double Destination = Convert.ToDouble(Selected_Destination );
+            Double mileage = Convert.ToDouble(Selected_mileage);
+            sum = (oil / mileage) * Destination;
+            Final_SUM = Convert.ToString(sum);
+            SUM.Text = Final_SUM;
+        }
+
         public string Make_url()   //Url Http parsing key value and connecting
         {                           //url 기본 형식 --> http://www.opinet.co.kr/api/avgAllPrice.do?out=xml&code= + Key값
 

@@ -9,17 +9,17 @@
     <StackPanel Margin="0,0,-14,-29">
 
         <Label Content="  차명" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Center" Margin="13,10,0,0" VerticalAlignment="Top" Width="180" Height="35"/>
-        <TextBox x:Name="Car_Name" HorizontalAlignment="Center" Height="23" Margin="50,-35,0,0"  Width="88" Text="Car Name"/>
+        <TextBox x:Name="Car_Name" Text="" HorizontalAlignment="Center" Height="23" Margin="50,-35,0,0"  Width="88"/>
 
         <Label Content="  거리                         KM"  BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Center" Margin="13,10,0,0" VerticalAlignment="Top" Width="180" Height="35"/>
-        <TextBox x:Name="Destination" HorizontalAlignment="Center" Height="23" Margin="5,-35,0,0"  Width="88" Text="Destination"/>
+        <TextBox x:Name="Destination" Text="" HorizontalAlignment="Center" Height="23" Margin="5,-35,0,0"  Width="88" />
 
         <Label Content="  연비                         KM/L" BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Center" Margin="13,10,0,0" VerticalAlignment="Top" Width="180" Height="35"/>
-        <TextBox x:Name="mileage" HorizontalAlignment="Center" Height="23" Margin="5,-35,0,0"  Width="88" Text="How to long" />
+        <TextBox x:Name="mileage" Text="" HorizontalAlignment="Center" Height="23" Margin="5,-35,0,0"  Width="88" />
 
         <Label Content="  유종"  BorderThickness="1" BorderBrush="#FF160A0A" HorizontalAlignment="Center" Margin="13,10,0,0" VerticalAlignment="Top" Width="180" Height="35"/>
 
-        <ComboBox x:Name="oil" HorizontalAlignment="Center" Height="23" Margin="50,-35,0,0"  Width="88" >
+        <ComboBox x:Name="oil" Text="" HorizontalAlignment="Center" Height="23" Margin="50,-35,0,0"  Width="88" >
             <ComboBoxItem Content="경유"/>
             <ComboBoxItem Content="휘발유"/>
             <ComboBoxItem Content="LPG"/>

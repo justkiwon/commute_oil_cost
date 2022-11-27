@@ -13,17 +13,11 @@ namespace gogo_JAM_MIN
 {
     public class Get_Url
     {
-        public struct data
-        {
-            string PRODNM;
-            string PRICE;
-            string diff;
-        };
+
         int Success = 0;
         public string[,] Request(string url)
         {
             string[,] Data = new string[6,6];
-
             // HttpWebRequest 이용한 응답 수신 방법
             var request = (HttpWebRequest)WebRequest.Create(url);   // 요청 URL을 기준으로 HTTP요청 인스턴스 생성
             request.Method = "GET"; // 방법은 GET(요청)으로 설정
