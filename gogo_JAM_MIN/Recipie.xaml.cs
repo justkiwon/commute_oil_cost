@@ -22,17 +22,9 @@ namespace gogo_JAM_MIN
     /// </summary>
     public partial class Recipie : Window
     {
-        public string Car_name { get; set; } // { return Car_name; } set { Car_name = Car_Name.Text; } }
-        public string destinationst { get; set; } // { return destinationst; } set { destinationst = Destination.Text; } }
-        public string Mileage { get; set; }
-        public string Oil { get; set; }
         public Recipie()
         {
             InitializeComponent();
-            Car_Name.Text = Car_name;
-            Destination.Text = destinationst;
-            mileage.Text = Mileage;
-            oil.Text = Oil;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,7 +32,7 @@ namespace gogo_JAM_MIN
             Check_Empty_string();
         }
 
-        public bool Check_Empty_string()                        
+        public bool Check_Empty_string()   // Data 입력 값 Data Check      
         {
             int temp = 0;
             if (Car_Name.Text == "" || Car_Name.Text == "Car Name")
@@ -71,10 +63,6 @@ namespace gogo_JAM_MIN
                     MessageBox.Show("Please, Retry insert Oil Type");
             }
             else {
-                Car_name = Car_Name.Text;
-                destinationst = Destination.Text;
-                Mileage = mileage.Text;
-                Oil = oil.Text ;
                 this.DialogResult = true; } // DialogResult 가 true면 꺼짐
             return true;
         }   

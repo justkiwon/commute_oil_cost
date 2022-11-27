@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-//using Url_Key; // 내가 만든 dll name space
 
 namespace gogo_JAM_MIN
 {
@@ -15,15 +14,16 @@ namespace gogo_JAM_MIN
         public MainWindow()
         {
             InitializeComponent();
-            string[,] a = get_Url.Request("http://www.opinet.co.kr/api/avgAllPrice.do?out=xml&code=F220919345");
+            string code = "";
+            string[,] a = get_Url.Request("http://www.opinet.co.kr/api/avgAllPrice.do?out=xml&code="+code);
             Data_Parsing( a );
         }
         public string Selected_Destination { get; set; }
-        public string Selected_mileage { get; set; } //그냥 get { return Selected_mileage; } set { Selected_mileage = value; }과 동일 함
+        public string Selected_mileage { get; set; } 
         public string Selected_oil { get; set; }
         public string Final_SUM { get; set; }
 
-        private void Button_Click(object sender, RoutedEventArgs e)  // My go-arrived info
+        private void Button_Click(object sender, RoutedEventArgs e)  // My go-arrived info    get variable data
         {
             Recipie recipie = new Recipie();
             if(recipie.ShowDialog() == true)
@@ -50,7 +50,7 @@ namespace gogo_JAM_MIN
             Calculate();
         }
 
-        public void Calculate()
+        public void Calculate()  // calculate All cost
         {
             Double sum;
             Double oil = Convert.ToDouble(Selected_oil);
@@ -61,14 +61,6 @@ namespace gogo_JAM_MIN
             SUM.Text = Final_SUM;
         }
 
-        public string Make_url()   //Url Http parsing key value and connecting
-        {                           //url 기본 형식 --> http://www.opinet.co.kr/api/avgAllPrice.do?out=xml&code= + Key값
-
-            string url2 = "http://www.opinet.co.kr/api/avgAllPrice.do"+"?out=xml&code=" + "F220919345"; // do 뒤는 dll로 키값 hidden 시킴, 따라서 그냥 본인의 키값 넣으면 됨
-          //  string url = Url_key.url;
-          //  url2 += url;
-            return url2;
-        }
         public string[,] Data_Parsing(string[,] a)   // oil set, price info
         {
 

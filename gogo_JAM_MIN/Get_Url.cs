@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace gogo_JAM_MIN
 {
-    public class Get_Url
+    public class Get_Url // XML을 긁어 Data 를 parsing 한다.
     {
 
         int Success = 0;
